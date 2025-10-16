@@ -283,6 +283,6 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vd5x3")
 
 [node name="Duck_col" type="CollisionShape2D" parent="."]
-position = Vector2(-0.600001, 10.6)
+position = Vector2(-0.600001, 10.2)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pegji")
