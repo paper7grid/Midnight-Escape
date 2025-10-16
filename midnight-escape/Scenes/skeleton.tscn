@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://pynd6qyvrub8"]
+[gd_scene load_steps=42 format=3 uid="uid://pynd6qyvrub8"]
 
 [ext_resource type="Texture2D" uid="uid://bf1m833spj6d" path="res://Assets/Player/Skeleton Idle.png" id="1_sfdtf"]
 [ext_resource type="Texture2D" uid="uid://bv0i62c3f13h6" path="res://Assets/Player/Skeleton Dead.png" id="1_vd5x3"]
 [ext_resource type="Texture2D" uid="uid://b3y32krofq30w" path="res://Assets/Player/Skeleton Walk.png" id="3_pegji"]
+[ext_resource type="AudioStream" uid="uid://dv1nrwvfp4u6x" path="res://Assets/Music/Jump.wav" id="4_pegji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxjam"]
 atlas = ExtResource("1_vd5x3")
@@ -286,3 +287,7 @@ shape = SubResource("RectangleShape2D_vd5x3")
 position = Vector2(-0.600001, 10.2)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pegji")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pegji")
+volume_db = -25.0
