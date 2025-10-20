@@ -273,10 +273,10 @@ scale = Vector2(5, 5)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pxjam")
-animation = &"Duck?"
+animation = &"Walk"
 autoplay = "Idle"
-frame = 1
-frame_progress = 0.751602
+frame = 7
+frame_progress = 0.578911
 
 [node name="Run_col" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 4)
