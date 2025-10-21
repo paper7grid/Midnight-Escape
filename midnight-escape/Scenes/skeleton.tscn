@@ -1,5 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://pynd6qyvrub8"]
+[gd_scene load_steps=43 format=3 uid="uid://pynd6qyvrub8"]
 
+[ext_resource type="Script" uid="uid://dgvmqe4scsql4" path="res://Scripts/skeleton.gd" id="1_5abox"]
 [ext_resource type="Texture2D" uid="uid://bf1m833spj6d" path="res://Assets/Player/Skeleton Idle.png" id="1_sfdtf"]
 [ext_resource type="Texture2D" uid="uid://bv0i62c3f13h6" path="res://Assets/Player/Skeleton Dead.png" id="1_vd5x3"]
 [ext_resource type="Texture2D" uid="uid://b3y32krofq30w" path="res://Assets/Player/Skeleton Walk.png" id="3_pegji"]
@@ -268,15 +269,15 @@ size = Vector2(11.2, 24)
 size = Vector2(21.2, 11.6)
 
 [node name="Skeleton" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(5, 5)
+script = ExtResource("1_5abox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pxjam")
-animation = &"Walk"
+animation = &"Duck?"
 autoplay = "Idle"
-frame = 7
-frame_progress = 0.578911
 
 [node name="Run_col" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 4)
