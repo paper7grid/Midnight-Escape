@@ -15,7 +15,6 @@
 [node name="Bg" type="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2, 2)
 texture = ExtResource("2_mdo6f")
 centered = false

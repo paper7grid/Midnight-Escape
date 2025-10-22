@@ -177,7 +177,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Duck?",
-"speed": 15.0
+"speed": 50.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -278,6 +278,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pxjam")
 animation = &"Duck?"
 autoplay = "Idle"
+frame = 3
+frame_progress = 0.853445
 
 [node name="Run_col" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 4)
