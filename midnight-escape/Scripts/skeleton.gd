@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const GRAVITY : int = 4200
+const GRAVITY : int = 6200
 const JUMP_SPEED : int = -1800
 
 func _physics_process(delta):

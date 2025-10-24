@@ -101,5 +101,5 @@ shape = SubResource("RectangleShape2D_4w3b3")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u1iee")
 autoplay = "default"
-frame = 3
-frame_progress = 0.606193
+frame = 1
+frame_progress = 0.871181
