@@ -1,0 +1,29 @@
+extends Node
+@onready var skeleton: CharacterBody2D = $Skeleton
+@onready var ground: StaticBody2D = $Ground
+@onready var bg: ParallaxBackground = $Bg
+@onready var camera_2d: Camera2D = $Camera2D
+
+const SKELETON_START_POS := Vector2i(74, 538)
+const CAM_START_POS := Vector2i(461, 398)
+
+var speed : float
+const start_speed : float = 10.0
+const max_speed : int = 25
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	new_game()
+	
+func new_game():
+	$Skeleton.position = SKELETON_START_POS
+	$Skeleton.velocity = Vector2i(0,0)
+	$Camera2D.position = CAM_START_POS
+	$Ground.position = Vector2i(-3, -159)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	speed = start_speed
+	
+	#move skeleton and camera
+	$Skeleton.position.x += speed
+	$Camera2D.position.x += speed
