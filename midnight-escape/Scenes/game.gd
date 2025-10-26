@@ -8,7 +8,7 @@ const SKELETON_START_POS := Vector2i(74, 538)
 const CAM_START_POS := Vector2i(461, 398)
 
 var speed : float
-const start_speed : float = 10.0
+const start_speed : float = 8.0
 const max_speed : int = 25
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
