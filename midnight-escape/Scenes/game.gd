@@ -10,8 +10,10 @@ const CAM_START_POS := Vector2i(461, 398)
 var speed : float
 const start_speed : float = 8.0
 const max_speed : int = 25
+var screen_size : Vector2i
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	screen_size = get_window().size
 	new_game()
 	
 func new_game():
@@ -27,3 +29,5 @@ func _process(delta: float) -> void:
 	#move skeleton and camera
 	$Skeleton.position.x += speed
 	$Camera2D.position.x += speed
+
+#updated ground pos
