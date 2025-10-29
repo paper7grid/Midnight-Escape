@@ -1,19 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkaurc6m7y8nf"]
 
-[ext_resource type="Texture2D" uid="uid://bixeqeu3xjpak" path="res://Assets/BG/GRND2.png" id="1_688p1"]
+[ext_resource type="Texture2D" uid="uid://rqylkk8k5xya" path="res://Assets/BG/GRDFinal.png" id="1_688p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oltiy"]
-size = Vector2(1621.5, 42)
+size = Vector2(1622.69, 33)
 
 [node name="Ground" type="StaticBody2D"]
-light_mask = 3
-position = Vector2(2, 655)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
+texture_filter = 1
+position = Vector2(0, 655)
 texture = ExtResource("1_688p1")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(811.25, 117)
+position = Vector2(811.344, 777.5)
 shape = SubResource("RectangleShape2D_oltiy")
