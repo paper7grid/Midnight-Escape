@@ -5,7 +5,7 @@ extends Node
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
 
-const SKELETON_START_POS := Vector2i(74, 538)
+const SKELETON_START_POS := Vector2i(190, 541)
 const CAM_START_POS := Vector2i(461, 398)
 
 var speed : float 
