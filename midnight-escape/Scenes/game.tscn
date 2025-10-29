@@ -11,7 +11,7 @@ script = ExtResource("1_3dryh")
 [node name="Bg" parent="." instance=ExtResource("1_wrm1d")]
 
 [node name="Ground" parent="." instance=ExtResource("2_3dryh")]
-position = Vector2(-1, 492)
+position = Vector2(-1, 474)
 
 [node name="Skeleton" parent="." instance=ExtResource("3_wowpa")]
 position = Vector2(74, 538)
