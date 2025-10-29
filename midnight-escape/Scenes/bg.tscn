@@ -36,7 +36,7 @@ motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
 z_index = 1
-position = Vector2(-2, 0)
+position = Vector2(-4, 0)
 texture = ExtResource("3_6j0i3")
 centered = false
 

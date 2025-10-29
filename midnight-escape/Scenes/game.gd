@@ -1,6 +1,7 @@
 extends Node
 @onready var skeleton: CharacterBody2D = $Skeleton
 @onready var ground: StaticBody2D = $Ground
+
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
 
