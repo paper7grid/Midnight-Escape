@@ -3,7 +3,9 @@ extends Node
 var blob_scene = preload("res://Scenes/enemyblob.tscn")
 var grave_scene = preload("res://Scenes/grave.tscn")
 var crow_scene = preload("res://Scenes/crow.tscn")
-
+var obstacles_t := [blob_scene, grave_scene]
+var obst : Array
+var crow_hei := [200, 390]
 
 @onready var skeleton: CharacterBody2D = $Skeleton
 @onready var ground: StaticBody2D = $Ground
@@ -43,6 +45,8 @@ func _process(delta: float) -> void:
 		if speed > max_speed: 
 			speed = max_speed
 			
+		#Obstacles
+		generate_obs()
 		#move skeleton and camera
 		$Skeleton.position.x += speed
 		$Camera2D.position.x += speed
@@ -58,6 +62,19 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			game_run = true
 			$txt1.get_node("Start").hide()
+
+func generate_obs():
+	#grnd obs 
+	if obst.is_empty():
+		var obs_type = obstacles_t[randi() % obstacles_t.size()]
+		var obs
+		obs = obs_type.instantiate()
+		var obs_height = obs.get_node("Sprite2D").texture.get_height()
+		last_ob = obs
+		add_child(obs)
+		obst.append(obs)
+		
+	
 
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)
