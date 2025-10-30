@@ -5,7 +5,7 @@ var grave_scene = preload("res://Scenes/grave.tscn")
 var crow_scene = preload("res://Scenes/crow.tscn")
 var obstacles_t := [blob_scene, grave_scene]
 var obst : Array
-var crow_hei := [200, 390]
+var crow_he := [200, 390]
 
 @onready var skeleton: CharacterBody2D = $Skeleton
 @onready var ground: StaticBody2D = $Ground
@@ -72,8 +72,8 @@ func generate_obs():
 		var obs_type = obstacles_t[randi() % obstacles_t.size()]
 		var obs
 		obs = obs_type.instantiate()
-		var obs_height = obs.get_node("AnimatedSprite2D").texture.get_height()
-		var obs_scale = obs.get_node("AnimatedSprite2D").scale
+		var obs_height = obs.get_node("Sprite2D").texture.get_height()
+		var obs_scale = obs.get_node("Sprite2D").scale
 		var obs_x : int = screen_size.x + score + 150
 		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 5
 		last_ob = obs

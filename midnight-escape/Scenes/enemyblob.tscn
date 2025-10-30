@@ -1,104 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://k7xpgvgii32b"]
+[gd_scene load_steps=4 format=3 uid="uid://k7xpgvgii32b"]
 
-[ext_resource type="Texture2D" uid="uid://22tyt1raey3e" path="res://Assets/Enemy/Bat-Sheet.png" id="1_yo7r6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yo7r6"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcwd7"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aciwh"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ej8mo"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xx7qi"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7478s"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8h0cq"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aru1b"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ah8uh"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ef8sl"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x6k8"]
-atlas = ExtResource("1_yo7r6")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8eojq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yo7r6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mcwd7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aciwh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ej8mo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xx7qi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7478s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h0cq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aru1b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ah8uh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ef8sl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6x6k8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 12.0
-}]
+[ext_resource type="Script" uid="uid://ko523oubge0b" path="res://Scenes/enemyblob.gd" id="1_mcwd7"]
+[ext_resource type="Texture2D" uid="uid://crbd4ks54cyb0" path="res://images/Bat1.png" id="2_aciwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1iee"]
 size = Vector2(48, 75)
 
 [node name="Blob" type="Area2D"]
+script = ExtResource("1_mcwd7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_8eojq")
-autoplay = "default"
-frame = 7
-frame_progress = 0.670127
+position = Vector2(-2, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_aciwh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 4.5)
