@@ -23,6 +23,7 @@ const max_speed : int = 25
 const speed_m : int = 5000
 var screen_size : Vector2i
 var game_run : bool
+var last_ob 
 # Called when the node  enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
