@@ -1,9 +1,13 @@
 extends Node
+#obstacles scenes: 
+var blob_scene = preload("res://Scenes/enemyblob.tscn")
+var grave_scene = preload("res://Scenes/grave.tscn")
+var crow_scene = preload("res://Scenes/crow.tscn")
+
+
 @onready var skeleton: CharacterBody2D = $Skeleton
 @onready var ground: StaticBody2D = $Ground
 @onready var txt_1: CanvasLayer = $txt1
-
-
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
 
@@ -38,7 +42,7 @@ func _process(delta: float) -> void:
 		speed = start_speed + score / speed_m
 		if speed > max_speed: 
 			speed = max_speed
-		
+			
 		#move skeleton and camera
 		$Skeleton.position.x += speed
 		$Camera2D.position.x += speed
