@@ -5,9 +5,9 @@ extends Node
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
 
-const SKELETON_START_POS := Vector2i(190, 541)
+const SKELETON_START_POS := Vector2i(167, 541)
 const CAM_START_POS := Vector2i(461, 398)
-
+var score : int
 var speed : float 
 const start_speed : float = 8.0
 const max_speed : int = 25
@@ -18,6 +18,7 @@ func _ready() -> void:
 	new_game()
 	
 func new_game():
+	score = 0
 	$Skeleton.position = SKELETON_START_POS
 	$Skeleton.velocity = Vector2i(0,0)
 	$Camera2D.position = CAM_START_POS
@@ -30,6 +31,9 @@ func _process(delta: float) -> void:
 	#move skeleton and camera
 	$Skeleton.position.x += speed
 	$Camera2D.position.x += speed
+	
+	score += speed
+	print(score)
 	
 	#updated ground pos
 	
