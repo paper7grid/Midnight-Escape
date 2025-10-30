@@ -21,12 +21,14 @@ var speed : float
 const start_speed : float = 9.0
 const max_speed : int = 25
 const speed_m : int = 5000
+var ground_height : int 
 var screen_size : Vector2i
 var game_run : bool
 var last_ob 
 # Called when the node  enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
+	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	new_game()
 	
 func new_game():
@@ -70,8 +72,13 @@ func generate_obs():
 		var obs_type = obstacles_t[randi() % obstacles_t.size()]
 		var obs
 		obs = obs_type.instantiate()
-		var obs_height = obs.get_node("Sprite2D").texture.get_height()
+		var obs_height = obs.get_node("AnimatedSprite2D").texture.get_height()
+		var obs_scale = obs.get_node("AnimatedSprite2D").scale
+		var obs_x : int = screen_size.x + score + 150
+		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 5
 		last_ob = obs
+		obs.position = Vector2i(obs_x, obs_y)
+		
 		add_child(obs)
 		obst.append(obs)
 		
