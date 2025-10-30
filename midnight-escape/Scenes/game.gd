@@ -18,7 +18,7 @@ const CAM_START_POS := Vector2i(461, 398)
 var score : int
 const score_m : int = 10
 var speed : float 
-const start_speed : float = 9.0
+const start_speed : float = 8.0
 const max_speed : int = 25
 const speed_m : int = 5000
 var ground_height : int 
@@ -68,21 +68,24 @@ func _process(delta: float) -> void:
 
 func generate_obs():
 	#grnd obs 
-	if obst.is_empty():
+	if obst.is_empty() or last_ob.position.x < score + randi_range(100, 300):
 		var obs_type = obstacles_t[randi() % obstacles_t.size()]
 		var obs
-		obs = obs_type.instantiate()
-		var obs_height = obs.get_node("Sprite2D").texture.get_height()
-		var obs_scale = obs.get_node("Sprite2D").scale
-		var obs_x : int = screen_size.x + score + 150
-		var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 5
-		last_ob = obs
-		obs.position = Vector2i(obs_x, obs_y)
-		
-		add_child(obs)
-		obst.append(obs)
-		
+		var max_obs = 3
+		for i in range(randi() % max_obs + 1):
+			obs = obs_type.instantiate()
+			var obs_height = obs.get_node("Sprite2D").texture.get_height()
+			var obs_scale = obs.get_node("Sprite2D").scale
+			var obs_x : int = screen_size.x + score + 100 + (i * 100)
+			var raise_amount = 10
+			var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) - raise_amount
+			last_ob = obs
+			add_obs(obs, obs_x, obs_y)
 	
+func add_obs(obs, x, y):
+	obs.position = Vector2i(x, y)
+	add_child(obs)
+	obst.append(obs)
 
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)

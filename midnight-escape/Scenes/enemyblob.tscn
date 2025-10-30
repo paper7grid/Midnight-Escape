@@ -12,7 +12,7 @@ script = ExtResource("1_mcwd7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-2, 0)
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_aciwh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
