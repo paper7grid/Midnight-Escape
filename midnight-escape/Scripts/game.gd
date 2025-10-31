@@ -18,7 +18,7 @@ const CAM_START_POS := Vector2i(461, 398)
 var score : int
 const score_m : int = 10
 var speed : float 
-const start_speed : float = 9.0
+const start_speed : float = 10.1
 const max_speed : int = 25
 const speed_m : int = 5000
 var ground_height : int 
