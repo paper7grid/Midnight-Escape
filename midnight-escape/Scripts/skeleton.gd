@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var run_col: CollisionShape2D = $Run_col
+@onready var jump_audio: AudioStreamPlayer2D = $Jump_audio
 
 const GRAVITY : int = 6200
 const JUMP_SPEED : int = -1800
@@ -16,7 +17,7 @@ func _physics_process(delta):
 			$Run_col.disabled = false
 			if Input.is_action_just_pressed("ui_accept"):
 				velocity.y = JUMP_SPEED
-				#$AudioStreamPlayer2D.play()
+				$Jump_audio.play()
 			elif Input.is_action_pressed("ui_down"):
 				$AnimatedSprite2D.play("Duck?")
 				$Run_col.disabled = true
@@ -26,5 +27,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("Idle")
 	
 	move_and_slide()
+	
 	
 	

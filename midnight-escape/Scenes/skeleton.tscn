@@ -253,14 +253,12 @@ frame_progress = 0.312953
 
 [node name="Run_col" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 4)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vd5x3")
 
 [node name="Duck_col" type="CollisionShape2D" parent="."]
 position = Vector2(-0.600001, 10.2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pegji")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Jump_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pegji")
-volume_db = -25.0
+volume_db = -1.0
