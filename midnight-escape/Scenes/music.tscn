@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ynkrpao1af2"]
+
+[ext_resource type="AudioStream" uid="uid://bnjvm1101h8d8" path="res://Assets/Music/Spooky.mp3" id="1_fbmny"]
+
+[node name="BG_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_fbmny")
+autoplay = true
+parameters/looping = true

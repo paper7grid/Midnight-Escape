@@ -12,10 +12,15 @@ var crow_he := [470, 875]
 @onready var txt_1: CanvasLayer = $txt1
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var bg_music: AudioStreamPlayer = $BG_Music
+
+
+
 
 const SKELETON_START_POS := Vector2i(167, 541)
 const CAM_START_POS := Vector2i(461, 398)
 var score : int
+var highscore : int
 const score_m : int = 10
 var speed : float 
 const start_speed : float = 10.1
@@ -83,6 +88,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			game_run = true
 			$txt1.get_node("Start").hide()
+			$BG_Music.play()
 
 func generate_obs():
 	#grnd obs 
@@ -119,7 +125,11 @@ func remove_obs(obs):
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)
 	
-	
+func high_score_check():
+	if score > highscore: 
+		highscore = score
+		$txt1.get_node("High_Score").text = "HIGH SCORE: " + str(highscore / score_m)
+		
 func H_obs(body):
 	if body.name == "Skeleton": 
 		game_over()
@@ -127,4 +137,6 @@ func H_obs(body):
 func game_over():
 	get_tree().paused = true
 	game_run = false
+	high_score_check()
 	$Game_o.show()
+	$BG_Music.stop()
