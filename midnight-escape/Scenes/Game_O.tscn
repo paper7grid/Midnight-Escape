@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://brxf16juvnkdo"]
+
+[ext_resource type="FontFile" uid="uid://c4gks8pq2chfl" path="res://Assets/Fonts/HelpMe.ttf" id="1_yyuaq"]
+[ext_resource type="StyleBox" uid="uid://1bsgviqc8ctf" path="res://Scenes/normal.tres" id="2_diyk1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diyk1"]
+bg_color = Color(0.146789, 0.634355, 0.935961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmita"]
+bg_color = Color(0, 0.171775, 0.370797, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe4k7"]
+bg_color = Color(0, 0.281568, 0.46181, 1)
+
+[node name="Game_o" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -39.5
+offset_right = 140.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yyuaq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("2_diyk1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_diyk1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmita")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe4k7")
+text = "Restart"

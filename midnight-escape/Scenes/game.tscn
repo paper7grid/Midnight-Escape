@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuq2jxob8lvqc"]
+[gd_scene load_steps=7 format=3 uid="uid://cuq2jxob8lvqc"]
 
 [ext_resource type="Script" uid="uid://cje5t5ggqyiql" path="res://Scripts/game.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cghrhu4iqmeop" path="res://Scenes/bg.tscn" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bkaurc6m7y8nf" path="res://Scenes/ground.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://pynd6qyvrub8" path="res://Scenes/skeleton.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dhg2us5rx2ywt" path="res://Scenes/Txt1.tscn" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://brxf16juvnkdo" path="res://Scenes/Game_O.tscn" id="6_i6g32"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_wowpa")
@@ -24,3 +25,5 @@ scale = Vector2(1, 0.707569)
 zoom = Vector2(1, 1.7)
 
 [node name="txt1" parent="." instance=ExtResource("5_wowpa")]
+
+[node name="Game_o" parent="." instance=ExtResource("6_i6g32")]

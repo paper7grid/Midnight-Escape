@@ -25,10 +25,14 @@ var ground_height : int
 var screen_size : Vector2i
 var game_run : bool
 var last_ob 
+
+@onready var game_o: CanvasLayer = $Game_o
+
 # Called when the node  enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+	$Game_o.get_node("Button").pressed.connect(new_game)
 	new_game()
 	
 func new_game():
@@ -40,6 +44,7 @@ func new_game():
 	$Camera2D.position = CAM_START_POS
 	$Ground.position = Vector2i(-3, -159)
 	$txt1.get_node("Start").show()
+	$Game_o.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -74,7 +79,7 @@ func _process(delta: float) -> void:
 
 func generate_obs():
 	#grnd obs 
-	if obstacles_t.is_empty() or last_ob.position.x < score + randi_range(100, 300):
+	if obst.is_empty() or last_ob.position.x < score + randi_range(100, 300):
 		var obs_type = obstacles_t[randi() % obstacles_t.size()]
 		var obs
 		var max_obs = 2
@@ -96,14 +101,25 @@ func generate_obs():
 			
 func add_obs(obs, x, y):
 	obs.position = Vector2i(x, y)
+	obs.body_entered.connect(H_obs)
 	add_child(obs)
 	obst.append(obs)
 	
 func remove_obs(obs): 
 	obs.queue_free()
-	obstacles_t.erase(obs)
+	obst.erase(obs)
+
 	
 
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)
 	
+	
+func H_obs(body):
+	if body.name == "Skeleton": 
+		game_over()
+
+func game_over():
+	get_tree().paused = true
+	game_run = false
+	$Game_o.show()
