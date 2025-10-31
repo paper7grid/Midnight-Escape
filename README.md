@@ -6,3 +6,6 @@ This is a scroll slider platformer game, I made in Godot! it includes three obst
 Some issues I faced were majorly learning how to do it, since I am pretty new to this software, and trying to set all the things perfectly. 
 I also created Jelly blob myself!! 
 I really enjoyed creating this game and hope you have fun too! 
+Playable link: https://paper78grid.itch.io/midnight-escape
+
+
