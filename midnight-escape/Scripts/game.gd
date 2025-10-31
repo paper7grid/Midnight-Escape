@@ -61,6 +61,12 @@ func _process(delta: float) -> void:
 		
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x
+			
+		#to stop obstacled off screen
+		for obs in obst: 
+			if obs.position.x < ($Camera2D.position.x - screen_size.x):
+				remove_obs(obs)
+			
 	else: 
 		if Input.is_action_just_pressed("ui_accept"):
 			game_run = true
@@ -68,7 +74,7 @@ func _process(delta: float) -> void:
 
 func generate_obs():
 	#grnd obs 
-	if obst.is_empty() or last_ob.position.x < score + randi_range(100, 300):
+	if obstacles_t.is_empty() or last_ob.position.x < score + randi_range(100, 300):
 		var obs_type = obstacles_t[randi() % obstacles_t.size()]
 		var obs
 		var max_obs = 2
@@ -92,6 +98,11 @@ func add_obs(obs, x, y):
 	obs.position = Vector2i(x, y)
 	add_child(obs)
 	obst.append(obs)
+	
+func remove_obs(obs): 
+	obs.queue_free()
+	obstacles_t.erase(obs)
+	
 
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)
