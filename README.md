@@ -8,4 +8,6 @@ I also created Jelly blob myself!!
 I really enjoyed creating this game and hope you have fun too! 
 Playable link: https://paper78grid.itch.io/midnight-escape
 
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
+
 
