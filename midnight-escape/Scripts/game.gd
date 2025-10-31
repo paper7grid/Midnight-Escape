@@ -6,17 +6,12 @@ var crow_scene = preload("res://Scenes/crow.tscn")
 var obstacles_t := [blob_scene, grave_scene]
 var obst : Array
 var crow_he := [470, 875]
-
 @onready var skeleton: CharacterBody2D = $Skeleton
 @onready var ground: StaticBody2D = $Ground
 @onready var txt_1: CanvasLayer = $txt1
 @onready var bg: ParallaxBackground = $Bg
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var bg_music: AudioStreamPlayer = $BG_Music
-
-
-
-
 const SKELETON_START_POS := Vector2i(167, 541)
 const CAM_START_POS := Vector2i(461, 398)
 var score : int

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var run_col: CollisionShape2D = $Run_col
 @onready var jump_audio: AudioStreamPlayer2D = $Jump_audio
@@ -25,7 +24,6 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play("Walk")
 	else:
 		$AnimatedSprite2D.play("Idle")
-	
 	move_and_slide()
 	
 	
