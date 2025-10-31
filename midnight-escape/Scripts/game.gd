@@ -39,6 +39,13 @@ func new_game():
 	score = 0
 	show_score()
 	game_run = false
+	get_tree().paused = false
+	
+	#reset all obs
+	for obs in obst:
+		obs.queue_free()
+	obst.clear()
+	
 	$Skeleton.position = SKELETON_START_POS
 	$Skeleton.velocity = Vector2i(0,0)
 	$Camera2D.position = CAM_START_POS
@@ -108,9 +115,7 @@ func add_obs(obs, x, y):
 func remove_obs(obs): 
 	obs.queue_free()
 	obst.erase(obs)
-
 	
-
 func show_score():
 	$txt1.get_node("Score_label").text = "SCORE: " + str(score / score_m)
 	
